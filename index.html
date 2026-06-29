@@ -124,7 +124,7 @@ a{color:inherit;text-decoration:none}
   <ol class="lp-steps"><li>Проверяем ваш кейс и документы. Говорим, что подходит, а что нужно добавить.</li><li>Готовим переводы и формируем полный пакет по требованиям Дома юстиции.</li><li>Согласовываем дату подачи и сопровождаем в Доме юстиции.</li><li>Помогаем при запросах юстиции; после одобрения подсказываем по прописке и ID-карте.</li></ol>
 
   <div class="lp-cta">
-    <a href="https://t.me/documenti_ge?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%AF%20%D0%B8%D0%B7%20%D0%B8%D0%BD%D1%81%D1%82%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%0A%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%82%D1%8C%20%D0%92%D0%9D%D0%96%20%D0%B2%20%D0%93%D1%80%D1%83%D0%B7%D0%B8%D0%B8.%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D1%81%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%BA%D0%B0%D0%BA%D0%B8%D0%B5%20%D0%BD%D1%83%D0%B6%D0%BD%D1%8B%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%3F" class="lp-btn lp-btn-tg" target="_blank" rel="noopener" onclick="fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ'})">
+    <a href="#" class="lp-btn lp-btn-tg" target="_blank" rel="noopener" onclick="openTG(event)">
       <span>Связаться в Telegram</span><span class="arr">↗</span>
     </a>
     <p class="lp-hint">Сообщение уже готово — вам осталось нажать «Отправить»</p>
@@ -138,5 +138,37 @@ a{color:inherit;text-decoration:none}
 </div></main>
 
 <footer class="lp-foot"><small>© 2026 Documenti.ge · <a href="https://documenti.ge/politika.html" target="_blank" rel="noopener">Политика конфиденциальности</a></small></footer>
+
+<script>
+// UTM → Telegram: читаем параметры из URL при загрузке и сохраняем в sessionStorage
+(function() {
+  var p = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k) {
+    if (p.get(k)) sessionStorage.setItem(k, p.get(k));
+  });
+})();
+
+function openTG(e) {
+  e.preventDefault();
+  // Пиксель Meta — трекаем лид как и раньше
+  if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ'});
+
+  var src  = sessionStorage.getItem('utm_source')   || '—';
+  var med  = sessionStorage.getItem('utm_medium')   || '—';
+  var camp = sessionStorage.getItem('utm_campaign') || '—';
+  var ad   = sessionStorage.getItem('utm_content')  || '—';
+
+  var msg =
+    'Здравствуйте! Я из инстаграм\n' +
+    'Хочу оформить ВНЖ в Грузии. Подскажите, с чего начать и какие нужны документы?\n\n' +
+    '— — —\n' +
+    '📌 Источник: '  + src  + '\n' +
+    '📡 Канал: '     + med  + '\n' +
+    '📣 Кампания: '  + camp + '\n' +
+    '🎯 Объявление: ' + ad;
+
+  window.open('https://t.me/documenti_ge?text=' + encodeURIComponent(msg), '_blank');
+}
+</script>
 
 </body></html>
