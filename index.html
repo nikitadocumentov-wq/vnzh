@@ -1,4 +1,8 @@
-<!DOCTYPE html><html lang="ru"><head>
+<!DOCTYPE html><html lang="ru"><head><script>(function(){var k='dg_ab_v1',v;try{v=localStorage.getItem(k)}catch(e){}
+var q=new URLSearchParams(location.search).get('v');if(q&&/^[abc]$/.test(q))v=q;
+if(!/^[abc]$/.test(v||'')){var r=Math.random();v=r<1/3?'a':(r<2/3?'b':'c');try{localStorage.setItem(k,v)}catch(e){}}
+window.DG_V=v;document.documentElement.className+=' v-'+v;
+window.DG_GREET={a:'Здравствуйте!',b:'Добрый день!',c:'Здравствуйте 🙂'}[v];})();</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <!-- Meta Pixel Code -->
 <script>
@@ -110,7 +114,44 @@ a{color:inherit;text-decoration:none}
 .lp-offer-note{margin:8px 0 0;text-align:center;font-size:12.5px;line-height:1.45;color:var(--text-2)}
 .lp-offer-note b{color:var(--text)}
 @media(max-width:600px){.lp-offer{font-size:15px;margin-bottom:8px}.lp-offer-note{font-size:11px;margin-top:6px}}
-</style></head><body>
+</style><style>
+.vb,.vc,.vbc{display:none}html.v-b .vb,html.v-c .vc,html.v-b .vbc,html.v-c .vbc{display:block}
+html.v-b .va,html.v-c .va{display:none}html.v-c main.lp-wrap{display:none}
+.bf-bar{position:sticky;top:0;z-index:60;background:linear-gradient(90deg,#ffd23f,#ffb300,#ffd23f);color:#111;text-align:center;font:800 12.5px/1.35 Montserrat,system-ui,sans-serif;padding:8px 10px;letter-spacing:.01em;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.bf-bar .t{display:inline-block;background:#111;color:#ffd23f;border-radius:6px;padding:1px 7px;margin-left:4px;font-weight:900;white-space:nowrap}
+.lp-social.vb{display:none}html.v-b .lp-social.vb{display:inline-flex}
+.lp-social.vb::before{content:"";width:9px;height:9px;border-radius:50%;background:#2bd36b;animation:dgp 1.6s infinite;box-shadow:0 0 0 0 rgba(43,211,107,.6)}
+@keyframes dgp{70%{box-shadow:0 0 0 8px rgba(43,211,107,0)}100%{box-shadow:0 0 0 0 rgba(43,211,107,0)}}
+.bf-price{border:2px dashed #e0b400;background:#fffbea;border-radius:14px;padding:11px 14px;margin:0 0 18px}
+.bf-price .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font:600 14px/1.4 system-ui;color:#222;padding:2px 0}
+.bf-price s{color:#999;margin-right:6px}.bf-price .new{font:900 18px Montserrat,system-ui;color:#d62828;white-space:nowrap}
+.bf-price .fine{font:500 11px/1.4 system-ui;color:#777;margin-top:4px}
+html.v-b .lp-offer{display:table;margin:0 auto 10px;background:#ffd23f;color:#111;border-radius:10px;padding:7px 14px;box-shadow:0 6px 16px -8px rgba(224,160,0,.8)}
+.lp-c{max-width:640px;margin:0 auto;padding:18px 16px 30px;font-family:Montserrat,system-ui,sans-serif;color:#141208}
+.lp-c h1{font:900 30px/1.12 Montserrat,system-ui;margin:6px 0 10px;letter-spacing:-.02em}
+.lp-c .sub{font:500 15px/1.5 system-ui;color:#4a4636;margin:0 0 16px}
+.lp-c .live{display:inline-flex;align-items:center;gap:8px;font:700 12.5px system-ui;color:#1e7a3e;background:#e9f9ef;border-radius:999px;padding:6px 12px;margin:0 0 12px}
+.lp-c .live:before{content:"";width:8px;height:8px;border-radius:50%;background:#2bd36b}
+.lp-c h2{font:800 18px Montserrat,system-ui;margin:22px 0 10px}
+.lp-c ul.chk{list-style:none;padding:0;margin:0}
+.lp-c ul.chk li{position:relative;padding:8px 0 8px 30px;font:500 14.5px/1.45 system-ui;border-bottom:1px solid #eee}
+.lp-c ul.chk li:before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;border-radius:50%;background:#141208;color:#ffd23f;font:900 12px/20px system-ui;text-align:center}
+.lp-c details{border:1px solid #e6e1cf;border-radius:12px;padding:12px 14px;margin:0 0 8px;background:#fff}
+.lp-c summary{font:700 14.5px system-ui;cursor:pointer;list-style:none}
+.lp-c summary:after{content:"+";float:right;font-weight:900}
+.lp-c details[open] summary:after{content:"–"}
+.lp-c details p{font:500 14px/1.5 system-ui;color:#4a4636;margin:8px 0 0}
+.lp-c .lp-btn{margin-bottom:10px}
+.c-sticky{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);box-shadow:0 -6px 20px rgba(0,0,0,.1)}
+html.v-c .c-sticky{display:flex}
+.c-sticky a{flex:1;text-align:center;border-radius:999px;padding:13px 8px;font:800 14px Montserrat,system-ui;color:#fff;text-decoration:none}
+.c-sticky .w{background:#1EAE55}.c-sticky .t2{background:#1796D1}
+.c-price{text-align:center;margin:6px 0 16px;padding:14px 10px;border-radius:18px;background:#fffbea;border:2px solid #ffd23f}
+.c-old{font:800 26px Montserrat,system-ui;color:#9a9a9a;text-decoration:line-through;text-decoration-color:#d62828;text-decoration-thickness:3px;line-height:1}
+.c-main{font:900 64px/1 Montserrat,system-ui;color:#d62828;letter-spacing:-.03em;margin:4px 0}
+.c-cap{font:600 12.5px system-ui;color:#555}
+.c-gift{font:700 16px system-ui;color:#141208;margin-top:8px}.c-gift s{color:#999;text-decoration-color:#d62828;text-decoration-thickness:2px}.c-gift b{color:#d62828;font-size:20px}
+</style></head><body><div class="bf-bar vbc">⚡ ЧЁРНАЯ ПЯТНИЦА · <b>на нашу работу −10%</b> · <span style="white-space:nowrap">осталось <span class="t dg-timer">…</span></span></div>
 
 <nav class="lp-nav">
   <a href="https://documenti.ge" class="brand">
@@ -122,14 +163,16 @@ a{color:inherit;text-decoration:none}
 <main class="lp-wrap"><div class="lp-card">
   <div class="lp-eyebrow"><span class="dot"></span>ОТВЕТИМ ЗА 10 МИНУТ</div>
   <h1 class="lp-h1">ВНЖ в Грузии</h1>
-  <div class="lp-social">Нас выбрали <b>570+ клиентов</b> в этом году</div>
+  <div class="lp-social va">Нас выбрали <b>570+ клиентов</b> в этом году</div>
+  <div class="lp-social vb"><b>255 человек</b> написали нам за прошлую неделю</div>
   <p class="lp-demand">Семь оснований для ВНЖ — по бизнесу, недвижимости, работе, IT, учёбе, семье или инвестициям. Разбираем ваш случай и сопровождаем на каждом шаге.</p>
+  <div class="bf-price vb"><div class="row"><span>ВНЖ по новому ИП</span><span><s>350 ₾</s><span class="new">315 ₾</span></span></div><div class="row"><span>Другие основания ВНЖ</span><span><s>440 ₾</s><span class="new">396 ₾</span></span></div><div class="fine">Скидка 10% на нашу работу до 30.11. Госпошлина — без скидки.</div></div>
 
   <h2 class="lp-h2">Как мы ведём ваш кейс</h2>
   <ol class="lp-steps"><li>Проверяем ваш кейс и документы. Говорим, что подходит, а что нужно добавить.</li><li>Готовим переводы и формируем полный пакет по требованиям Дома юстиции.</li><li>Согласовываем дату подачи и сопровождаем в Доме юстиции.</li><li>Помогаем при запросах юстиции; после одобрения подсказываем по прописке и ID-карте.</li></ol>
 
   <div class="lp-cta">
-    <p class="lp-offer">До 30 ноября — −10% на нашу работу</p>
+    <p class="lp-offer">До 30 ноября — на нашу работу −10%</p>
     <a href="#" class="lp-btn lp-btn-wa" rel="noopener" onclick="openWA(event)">
       <span>Написать в WhatsApp</span><span class="arr">↗</span>
     </a>
@@ -145,6 +188,17 @@ a{color:inherit;text-decoration:none}
     <div><b>А→Я</b>сопровождаем<br>шаг за шагом</div>
   </div>
 </div></main>
+<main class="lp-c vc">
+<div class="live">255 человек написали нам за прошлую неделю</div>
+<h1>ВНЖ в Грузии с полным сопровождением</h1>
+<p class="sub">Подберём основание, соберём документы и проведём до подачи.</p>
+<div class="c-price"><div class="c-old">440 ₾</div><div class="c-main">396 ₾</div><div class="c-cap">ВНЖ: наша работа со скидкой 10% · госпошлина отдельно</div><div class="c-gift">По новому ИП: <s>350 ₾</s> <b>315 ₾</b></div></div>
+<p class="lp-offer" style="display:table;margin:0 auto 10px;background:#ffd23f;color:#111;border-radius:10px;padding:7px 14px">До 30 ноября — на нашу работу −10%</p>
+<a href="#" class="lp-btn lp-btn-wa" onclick="openWA(event)"><span>Успеть со скидкой — WhatsApp</span><span class="arr">↗</span></a>
+<a href="#" class="lp-btn lp-btn-tg" onclick="openTG(event)"><span>Успеть со скидкой — Telegram</span><span class="arr">↗</span></a>
+<p class="lp-offer-note">Нажмите кнопку — откроется готовое сообщение с вашим промокодом. Просто отправьте его, и мы ответим.</p>
+<details open style="margin-top:14px"><summary>Нужен оборот по ИП?</summary><p>Для ИП не старше 3 месяцев оборот не нужен. Если ИП старше — нужен оборот 50 000 ₾ за 12 месяцев.</p></details>
+</main>
 
 <footer class="lp-foot"><small>© 2026 Documenti.ge · <a href="https://documenti.ge/politika.html" target="_blank" rel="noopener">Политика конфиденциальности</a></small></footer>
 
@@ -185,12 +239,13 @@ function dgSend(tries) {
 dgSend(0);
 
 function dgMsg() {
-  return 'Здравствуйте! Подскажите, какое основание ВНЖ подходит в моём случае?\n' +
+  return DG_GREET + ' Подскажите, какое основание ВНЖ подходит в моём случае?\n' +
     'Хочу по акции «Чёрная пятница» −10%. Промокод: ' + dgCode;
 }
 
 function openWA(e) {
   e.preventDefault();
+  try { if (typeof fbq === "function") fbq("trackCustom", "LP_" + DG_V.toUpperCase() + "_Click"); } catch (x) {}
   // Пиксель Meta — трекаем лид как и раньше
   if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ', method: 'whatsapp'});
 
@@ -200,6 +255,7 @@ function openWA(e) {
 
 function openTG(e) {
   e.preventDefault();
+  try { if (typeof fbq === "function") fbq("trackCustom", "LP_" + DG_V.toUpperCase() + "_Click"); } catch (x) {}
   // Пиксель Meta — трекаем лид как и раньше
   if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ'});
 
@@ -210,4 +266,6 @@ function openTG(e) {
 }
 </script>
 
+<script>(function(){var end=new Date("2026-11-30T23:59:59+04:00");function p(n){return(n<10?"0":"")+n}function f(){var d=Math.max(0,end-new Date()),D=Math.floor(d/864e5),H=Math.floor(d%864e5/36e5),M=Math.floor(d%36e5/6e4),S=Math.floor(d%6e4/1e3);var s=D+"д "+p(H)+":"+p(M)+":"+p(S);document.querySelectorAll(".dg-timer").forEach(function(e){e.textContent=s});}f();setInterval(f,1e3);
+try{if(typeof fbq==="function")fbq("trackCustom","LP_"+DG_V.toUpperCase()+"_View");}catch(e){}})();</script>
 </body></html>
