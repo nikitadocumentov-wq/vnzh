@@ -74,6 +74,7 @@ a{color:inherit;text-decoration:none}
 .lp-btn .arr{font-size:17px;opacity:.9}
 .lp-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(20,18,8,.4)}
 .lp-btn-tg{background:linear-gradient(135deg,#29A8E0,#1796D1);box-shadow:0 10px 26px -10px rgba(23,150,209,.55)}
+.lp-btn-wa{background:linear-gradient(135deg,#2BD36B,#1EAE55);box-shadow:0 10px 26px -10px rgba(30,174,85,.55);margin-bottom:10px}
 .lp-hint{margin:8px 0 0;text-align:center;font-size:12.5px;color:var(--text-2)}
 
 .lp-trust-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0 0}
@@ -128,11 +129,14 @@ a{color:inherit;text-decoration:none}
   <ol class="lp-steps"><li>Проверяем ваш кейс и документы. Говорим, что подходит, а что нужно добавить.</li><li>Готовим переводы и формируем полный пакет по требованиям Дома юстиции.</li><li>Согласовываем дату подачи и сопровождаем в Доме юстиции.</li><li>Помогаем при запросах юстиции; после одобрения подсказываем по прописке и ID-карте.</li></ol>
 
   <div class="lp-cta">
-    <p class="lp-offer">Одно сообщение — и скидка 5% навсегда!</p>
-    <a href="#" class="lp-btn lp-btn-tg" target="_blank" rel="noopener" onclick="openTG(event)">
+    <p class="lp-offer">До 30 ноября — −10% на нашу работу</p>
+    <a href="#" class="lp-btn lp-btn-wa" rel="noopener" onclick="openWA(event)">
+      <span>Написать в WhatsApp</span><span class="arr">↗</span>
+    </a>
+    <a href="#" class="lp-btn lp-btn-tg" rel="noopener" onclick="openTG(event)">
       <span>Связаться в Telegram</span><span class="arr">↗</span>
     </a>
-    <p class="lp-offer-note">Нажимая кнопку, откроется сообщение с вашим промокодом. Отправьте его и станьте участником программы лояльности Documenti. Получите <b>−5% на услуги после первой</b> в программе лояльности.</p>
+    <p class="lp-offer-note">Нажмите кнопку — откроется готовое сообщение с вашим промокодом. Просто отправьте его, и мы ответим.</p>
   </div>
 
   <div class="lp-trust-mini">
@@ -180,16 +184,29 @@ function dgSend(tries) {
 }
 dgSend(0);
 
+function dgMsg() {
+  return 'Здравствуйте! Подскажите, какое основание ВНЖ подходит в моём случае?\n' +
+    'Хочу по акции «Чёрная пятница» −10%. Промокод: ' + dgCode;
+}
+
+function openWA(e) {
+  e.preventDefault();
+  // Пиксель Meta — трекаем лид как и раньше
+  if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ', method: 'whatsapp'});
+
+  var url = 'https://wa.me/995591339448?text=' + encodeURIComponent(dgMsg());
+  setTimeout(function () { window.location.href = url; }, 300); // даём пикселю отправить лид
+}
+
 function openTG(e) {
   e.preventDefault();
   // Пиксель Meta — трекаем лид как и раньше
   if (typeof fbq === 'function') fbq('track', 'Lead', {content_name: 'ВНЖ', content_category: 'VNJ'});
 
-  var msg =
-    'Здравствуйте! Хочу оформить ВНЖ в Грузии.\n' +
-    'Мой промокод: ' + dgCode + ' — хочу в программу лояльности.';
+  var msg = dgMsg();
 
-  window.open('https://t.me/documenti_ge?text=' + encodeURIComponent(msg), '_blank');
+  var url = 'https://t.me/documenti_ge?text=' + encodeURIComponent(msg);
+  setTimeout(function () { window.location.href = url; }, 300); // даём пикселю отправить лид
 }
 </script>
 
