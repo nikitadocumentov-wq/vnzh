@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="ru"><head><script>(function(){var k='dg_ab_v1',v;try{v=localStorage.getItem(k)}catch(e){}
 var q=new URLSearchParams(location.search).get('v');if(q&&/^[abc]$/.test(q))v=q;
-if(!/^[abc]$/.test(v||'')){var r=Math.random();v=r<1/3?'a':(r<2/3?'b':'c');try{localStorage.setItem(k,v)}catch(e){}}
+if(!q)v='a';/* 19.11: тест A/B/C остановлен, всем A; B и C только по ?v=b|c */
 window.DG_V=v;document.documentElement.className+=' v-'+v;
 window.DG_GREET={a:'Здравствуйте!',b:'Добрый день!',c:'Здравствуйте 🙂'}[v];})();</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
